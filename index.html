@@ -35,7 +35,10 @@
             <a href="#">Forgot Password?</a>
         </div>
 
-        <button onclick="arigato()">LOGIN</button>
+        <div class="button-group" style="display:flex; gap:10px;">
+            <button onclick="arigato()">LOGIN</button>
+            <button onclick="signUp()">SIGN UP</button>
+        </div>
 
         <!-- FOOTER -->
         <div class="footer">
@@ -48,6 +51,10 @@
 	<script>
         function arigato() {
             window.location.href = "homepage.html";
+        }
+        function signUp() {
+            // update this path if your signup page has a different name
+            window.location.href = "signup.html";
         }
     </script>
 </html>
