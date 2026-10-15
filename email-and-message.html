@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Capitol University - Contact Us</title>
+	<link rel="stylesheet" href="e-and-m.css">
+</head>
+
+<body>
+
+	<div class="content">
+        <div style="text-align: left; margin-bottom: 10px;">
+            <a href="iatset.html" style="color: darkred; text-decoration: none; font-size: 16px;">&larr; Back</a>
+        </div>
+
+		<h1>Contact Us</h1>
+
+		<button onclick="showForm('email')">Email</button>
+		<button onclick="showForm('message')">Message</button>
+
+		<div id="email" style="display: none;">
+
+			<h2>Email School Personnel</h2>
+
+			<input type="text" id="emailName" placeholder="Input name here:"><br><br>
+
+			<input type="text" id="emailAddress" placeholder="Input email here:"><br><br>
+
+			<input type="text" id="emailSubject" placeholder="Input subject here:"><br><br>
+
+			<textarea id="emailMessage" placeholder="Message:"></textarea><br><br>
+
+			<button onclick="sendEmail()">Send Email</button>
+
+		</div>
+
+		<div id="message" style="display: none;">
+
+			<h2>Message Dean</h2>
+
+			<input type="text" id="messageName" placeholder="Input name here:"><br><br>
+
+			<textarea id="messageText" placeholder="Message:"></textarea><br><br>
+
+			<button onclick="sendMessage()">Send Message</button>
+
+		</div>
+
+	</div>
+
+	<script>
+		
+		function showForm(choice) {
+
+			document.getElementById("email").style.display = "none";
+			document.getElementById("message").style.display = "none";
+
+			if (choice == "email") {
+				document.getElementById("email").style.display = "block";
+			}
+
+			if (choice == "message") {
+				document.getElementById("message").style.display = "block";
+			}
+		}
+
+
+		function sendEmail() {
+
+			let name = document.getElementById("emailName").value;
+			let email = document.getElementById("emailAddress").value;
+			let subject = document.getElementById("emailSubject").value;
+			let message = document.getElementById("emailMessage").value;
+
+			let fields = [name, email, subject, message];
+
+			let i = 0;
+			let empty = false;
+
+			while (i < fields.length) {
+
+				if (fields[i].trim() == "") {
+					empty = true;
+				}
+
+				i++;
+			}
+
+			if (empty == true) {
+
+				alert("Please fill in all fields.");
+
+			} else if (!email.includes("@") || !email.includes(".")) {
+
+				alert("Please enter a valid email.");
+
+			} else {
+
+				alert("Email Sent!");
+
+			}
+		}
+
+
+		function sendMessage() {
+
+			let name = document.getElementById("messageName").value;
+			let message = document.getElementById("messageText").value;
+
+			let fields = [name, message];
+
+			let i = 0;
+			let empty = false;
+
+			while (i < fields.length) {
+
+				if (fields[i].trim() == "") {
+					empty = true;
+				}
+
+				i++;
+			}
+
+			if (empty == true) {
+
+				alert("Please fill in all fields.");
+
+			} else {
+
+				alert("Message Sent!");
+
+			}
+		}
+
+	</script>
+
+</body>
+</html>

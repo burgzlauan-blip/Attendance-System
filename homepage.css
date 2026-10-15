@@ -1,0 +1,296 @@
+body {
+	min-height: 100dvh;
+	margin: 0;
+	background: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), url(cuuni.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	background-attachment: scroll;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: auto 1fr auto;
+	grid-template-areas: 
+	"header"
+	"main"
+	"footer";
+}
+
+/* Desktop Header Design */
+
+header {
+	grid-area: header;
+	display: grid;
+	grid-template-columns: auto auto 1fr;
+	grid-template-areas: 
+	"logo title navigation";
+	background-color: rgb(175, 0, 0);
+	align-items: center;
+	position: sticky;
+	top: 0;
+	z-index: 100;
+}
+
+header h2, footer p {
+	color: white;
+	margin: 0;
+}
+
+.cuLogo {
+	grid-area: logo;
+	display: flex;
+    align-items: center;
+    padding: 10px 10px 10px 20px;
+}
+
+.cuLogo img {
+	width: 60px;
+	aspect-ratio: 1 / 1;
+}
+
+.headerTitle {
+	grid-area: title;
+	display: flex;
+	align-items: center;
+	padding-left: 10px;
+}
+
+nav {
+	grid-area: navigation;
+	display: flex;
+	padding-right: 20px;
+	gap: 20px;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+.userProfile {
+	display: flex;
+	gap: 10px;
+	align-items: center;
+	color: white;
+}
+
+nav .userProfile img {
+	width: 50px;
+	height: 50px;
+	aspect-ratio: 1 /1;
+	border-radius: 50%;
+	object-fit: cover;
+	border: 2px solid white;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+	cursor: pointer;
+}
+
+nav button {
+	display: none;
+	border: none;
+	cursor: pointer;
+	flex-direction: column;
+	border-radius: 5px;
+	padding: 12px 15px;
+	gap: 5px;
+}
+
+nav button span {
+	display: block;
+	width: 25px;
+	height: 3px;
+	border-radius: 3px;
+	background-color: white;
+}
+
+nav ul {
+	display: flex;
+	margin: 0;
+	padding: 0;
+	gap: 10px;
+	list-style-type: none;
+}
+
+nav ul li a {
+	padding: 7px 15px;
+	border-radius: 5px;
+	text-decoration: none;
+	color: white;
+}
+
+nav ul li a, nav button {
+	background-color: rgb(140, 0, 0);
+ 	transition: background-color 0.2s ease;
+}
+
+nav ul li a:hover, nav button:hover {
+	background-color: rgb(110, 0, 0);
+}
+
+/* Desktop Main Design */
+
+main {
+	grid-area: main;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 25px;
+	padding: 30px;
+	align-items: start;
+}
+
+.ongoingSection, .laterSection {
+	background-color: rgba(255, 255, 255, 0.9);
+	padding: 25px;
+	border-radius: 10px;
+	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+	min-height: 200px;
+}
+
+.sectionTitle {
+	margin-top: 0;
+	margin-bottom: 20px;
+	font-size: 1.4rem;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.livePulse {
+	width: 10px;
+	height: 10px;
+	background-color: rgb(46, 204, 113);
+	border-radius: 50%;
+	display: inline-block;
+	animation: pulseEffect 1.5s infinite;
+}
+
+@keyframes pulseEffect {
+	0% { transform: scale(0.9); opacity: 1; }
+	50% { transform: scale(1.2); opacity: 0.5; }
+	100% { transform: scale(0.9); opacity: 1; }
+}
+
+.noPulse {
+	width: 10px;
+	height: 10px;
+	background-color: gray;
+	border-radius: 50%;
+	display: inline-block;
+}
+
+.classCard {
+	background-color: white;
+	border-radius: 8px;
+	padding: 20px;
+	margin-bottom: 15px;
+	border-left: 5px solid rgb(175, 0, 0);
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.laterClass {
+	border-left-color: rgb(127, 140, 141);
+}
+
+.classInfo {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 5px;
+}
+
+.roomNumber {
+	background-color: rgb(175, 0, 0);
+	color: white;
+	padding: 4px 8px;
+	border-radius: 4px;
+	font-weight: bold;
+	font-size: 0.75rem;
+}
+
+.roomPending {
+	background-color: rgb(127, 140, 141);
+}
+
+.sectionTitle, .classTime, .sectionCode, .subjectName {
+	color: black;
+}
+
+.classTime {
+	font-size: 0.85rem;
+	font-weight: 500;
+}
+
+.sectionCode {
+	margin: 0;
+	font-size: 1.25rem;
+}
+
+.subjectName {
+	margin: 0 0 10px 0;
+	font-size: 0.95rem;
+}
+
+.actionButton {
+	border: none;
+	padding: 10px 15px;
+	border-radius: 5px;
+	font-weight: bold;
+	cursor: pointer;
+	text-align: center;
+	transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.attendanceButton {
+	background-color: rgb(175, 0, 0);
+	color: white;
+}
+
+.attendanceButton:hover {
+	background-color: rgb(140, 0, 0);
+}
+
+.attendanceButton:active {
+	transform: scale(0.98);
+}
+
+.lockedButton {
+	background-color: lightgray;
+	color: gray;
+	cursor: not-allowed;
+}
+
+/* Desktop Footer Design */
+
+footer {
+	grid-area: footer;
+	display: flex;
+	background-color: rgb(175, 0, 0);
+	justify-content: center;
+	padding: 15px 0;
+}
+
+/* Tablet View */
+
+@media (max-width: 1024px) {
+
+}
+
+/* Mobile View */
+
+@media (max-width: 768px) {
+
+	/* Mobile Header */
+
+	nav button {
+		display: flex;
+	}
+
+	nav .userProfile, nav ul {
+		display: none;
+	}
+
+	/* Mobile Main */
+
+	main {
+		grid-template-columns: 1fr;
+	}
+}

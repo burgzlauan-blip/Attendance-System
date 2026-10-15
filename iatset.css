@@ -1,0 +1,141 @@
+body {
+    background-color: #fdf2f2;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding-bottom: 40px;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+    color: darkred;
+}
+
+.banner {
+    display: block;
+    object-fit: fill;
+}
+
+.banner img {
+    width: 100%;
+    height: 150px;
+}
+
+.aclassgrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    align-items: start;
+}
+
+.class-title {
+    border: 1px solid #d4af37;
+    border-radius: 6px;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(139, 0, 0, 0.1);
+}
+
+/* Style the summary header to display inline with arrow */
+.class-title summary {
+    font-weight: bold;
+    user-select: none;
+    cursor: pointer;
+    color: darkred;
+}
+
+.class-title summary h3 {
+    display: inline-block;
+    margin: 0;
+    color: darkred;
+}
+
+/* Content inside collapsible section */
+.attendance-section {
+    margin-top: 10px;
+    padding-left: 10px;
+}
+
+.attendance-section a {
+    display: block;
+    padding: 5px 0;
+    text-decoration: none;
+    color: #333;
+}
+
+.status-title {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.present {
+    color: #008000;
+}
+
+.absent {
+    color: darkred;
+}
+
+.inactive {
+    color: #9e9e9e;
+}
+
+.attendance-section ul {
+    margin-top: 0;
+    padding-left: 20px;
+    list-style-type: none;
+}
+
+footer {
+    text-align: center;
+    margin-top: 30px;
+    padding: 20px;
+}
+
+.footer-btn {
+    display: inline-block;
+    background-color: darkred;
+    color: white;
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.footer-btn:hover {
+    background-color: maroon;
+}
+
+/* Responsive Web Design Media Queries */
+@media (max-width: 800px) {
+    .aclassgrid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        font-size: 14px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    .aclassgrid {
+        grid-template-columns: 1fr;
+        padding: 10px;
+    }
+
+    .banner img {
+        height: 100px;
+    }
+
+    button {
+        width: 90%;
+        font-size: 16px;
+    }
+}
