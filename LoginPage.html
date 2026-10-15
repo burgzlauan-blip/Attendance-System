@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance System - Capitol University</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="login-container">
+
+        <div class="header">
+            <h1>Capitol University</h1>
+            <p>Attendance System Login</p>
+        </div>
+      
+        <div class="input-group">
+            <label for="email">Email</label>
+            <input type="text" id="email" name="email" placeholder="Enter your Email">
+        </div>
+
+        <div class="input-group">
+            <label>Password</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password">
+        </div>
+
+        <div class="options">
+            <label>
+                <input type="checkbox" name="remember">
+                Remember me
+            </label>
+
+            <a href="#">Forgot Password?</a>
+        </div>
+
+        <button onclick="arigato()">LOGIN</button>
+
+        <!-- FOOTER -->
+        <div class="footer">
+            <p>Attendance Management System</p>
+        </div>
+
+    </div>
+
+</body>
+	<script>
+        function arigato() {
+            window.location.href = "homepage.html";
+        }
+    </script>
+</html>
